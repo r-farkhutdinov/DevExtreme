@@ -402,7 +402,9 @@ class Editor<
   }
 
   _optionChanged(args: OptionChanged<TProperties> | Record<string, unknown>): void {
-    const { name, value, previousValue } = args;
+    const { name, previousValue } = args;
+
+    const value = this._getInstanceValue(args);
 
     switch (name) {
       case 'onValueChanged':
@@ -465,6 +467,12 @@ class Editor<
 
   _resetToInitialValue(): void {
     this.option('value', this._initialValue);
+  }
+
+  _getInstanceValue({
+    value,
+  }: OptionChanged<TProperties> | Record<string, unknown>): unknown {
+    return value;
   }
 
   blur(): void {

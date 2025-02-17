@@ -907,6 +907,10 @@ const ColorView = (Editor as any).inherit({
         this.callBase(args);
     }
   },
+
+  _getInstanceValue() {
+    return this.option('value');
+  },
 });
 
 registerComponent('dxColorView', ColorView);
