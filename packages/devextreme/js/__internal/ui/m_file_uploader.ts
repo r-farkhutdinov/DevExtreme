@@ -162,13 +162,23 @@ class FileUploader extends Editor<FileUploaderProperties> {
     });
   }
 
+  _isLabelTextHiddenByDevice(): boolean {
+    return devices.real().deviceType !== 'desktop';
+  }
+
+  _getDefaultLabelText(): string {
+    return this._isLabelTextHiddenByDevice()
+      ? ''
+      : messageLocalization.format('dxFileUploader-dropFile');
+  }
+
   _getDefaultOptions(): FileUploaderProperties {
     return extend(super._getDefaultOptions(), {
       chunkSize: 0,
       value: [],
       selectButtonText: messageLocalization.format('dxFileUploader-selectFile'),
       uploadButtonText: messageLocalization.format('dxFileUploader-upload'),
-      labelText: messageLocalization.format('dxFileUploader-dropFile'),
+      labelText: this._getDefaultLabelText(),
       name: 'files[]',
       multiple: false,
       accept: '',
@@ -397,9 +407,12 @@ class FileUploader extends Editor<FileUploaderProperties> {
   }
 
   _updateInputLabelText(): void {
-    const correctedValue = this._isInteractionDisabled() ? '' : this.option('labelText');
+    if (this._isLabelTextHiddenByDevice() || this._isInteractionDisabled()) {
+      this._$inputLabel.text('');
+    } else {
     // @ts-expect-error
-    this._$inputLabel.text(correctedValue);
+      this._$inputLabel.text(this.option('labelText'));
+    }
   }
 
   _focusTarget() {
