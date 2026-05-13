@@ -1,7 +1,7 @@
 /*!
 * DevExtreme (dx.messages.en.js)
-* Version: 26.1.0
-* Build date: Mon May 11 2026
+* Version: 26.1.2
+* Build date: Wed May 13 2026
 *
 * Copyright (c) 2012 - 2026 Developer Express Inc. ALL RIGHTS RESERVED
 * Read about DevExtreme licensing here: https://js.devexpress.com/Licensing/
@@ -114,6 +114,18 @@
             "dxForm-submitButtonText": "Submit",
             "dxNumberBox-invalidValueMessage": "Value must be a number",
             "dxNumberBox-noDataText": "No data",
+            "dxDataGrid-aiAssistantTitle": "AI Assistant",
+            "dxDataGrid-aiAssistantProcessingMessageHeader": "Request in progress",
+            "dxDataGrid-aiAssistantProcessingMessage": "Processing...",
+            "dxDataGrid-aiAssistantErrorMessageHeader": "Failed to process request",
+            "dxDataGrid-aiAssistantAbortMessage": "Request stopped.",
+            "dxDataGrid-aiAssistantSuccessMessage": "Success",
+            "dxDataGrid-aiAssistantErrorMessage": "Error",
+            "dxDataGrid-aiAssistantExecutionAbortMessage": "Execution Interrupted",
+            "dxDataGrid-aiAssistantClearButtonText": "Clear",
+            "dxDataGrid-aiAssistantRegenerateButtonText": "Regenerate",
+            "dxDataGrid-aiAChatEmptyViewMessage": "Chat is Empty",
+            "dxDataGrid-aiChatEmptyViewPrompt": "AI Assistant is ready to answer your questions.",
             "dxDataGrid-aiPromptEditorTitle": "AI Prompt Editor",
             "dxDataGrid-aiPromptEditorPlaceholder": "Prompt AI to generate column values...",
             "dxDataGrid-aiPromptEditorApplyButton": "Apply",
@@ -273,8 +285,10 @@
             "dxScheduler-ariaLabel": "Scheduler. {0} view: {1} with {2} appointments",
             "dxScheduler-ariaLabel-currentIndicator-present": "The current time indicator is visible in the view",
             "dxScheduler-ariaLabel-currentIndicator-not-present": "The current time indicator is not visible on the screen",
-            "dxScheduler-appointmentAriaLabel-group": "Group: {0}",
+            "dxScheduler-appointmentAriaDescription-group": "Group: {0}",
             "dxScheduler-appointmentAriaLabel-recurring": "Recurring appointment",
+            "dxScheduler-hotkeysAriaDescription-delete": "Press Delete to delete this appointment",
+            "dxScheduler-hotkeysAriaDescription-homeEnd": "Press Home or End to quickly navigate to the first or last appointment",
             "dxScheduler-appointmentListAriaLabel": "Appointment list",
             "dxScheduler-newPopupTitle": "New Appointment",
             "dxScheduler-editPopupTitle": "Edit Appointment",

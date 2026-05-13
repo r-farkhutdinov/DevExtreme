@@ -1,7 +1,7 @@
 /*!
 * DevExtreme (dx.vectormaputils.js)
-* Version: 26.1.0
-* Build date: Mon May 11 2026
+* Version: 26.1.2
+* Build date: Wed May 13 2026
 *
 * Copyright (c) 2012 - 2026 Developer Express Inc. ALL RIGHTS RESERVED
 * Read about DevExtreme licensing here: https://js.devexpress.com/Licensing/
@@ -16,10 +16,10 @@
     } else if(typeof module === "object" && module.exports) {
         factory(exports);
     } else {
-        var exports = root.DevExpress = root.DevExpress || {};
-        exports = exports.viz = exports.viz || {};
-        exports = exports.vectormaputils = {};
-        factory(exports);
+        var browserExports = root.DevExpress = root.DevExpress || {};
+        browserExports = browserExports.viz = browserExports.viz || {};
+        browserExports = browserExports.vectormaputils = {};
+        factory(browserExports);
     }
 }(this, function(exports) {
 /* eslint-disable no-undef, no-var, one-var, import/no-commonjs*/
