@@ -163,7 +163,6 @@ class Chat extends Widget<Properties> {
     $(this.element()).addClass(CHAT_CLASS);
 
     super._initMarkup();
-
     this._renderMessageList();
     this._renderAlertList();
     this._renderMessageBox();
