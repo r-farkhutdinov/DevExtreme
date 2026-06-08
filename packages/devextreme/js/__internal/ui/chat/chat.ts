@@ -226,7 +226,6 @@ class Chat extends Widget<ChatProperties> {
     const isLoading = this._dataController.isLoading();
     const currentUserId = user?.id;
     const onAttachmentDownloadClick = this._getAttachmentDownloadHandler();
-
     const options: MessageListProperties = {
       items,
       currentUserId,
