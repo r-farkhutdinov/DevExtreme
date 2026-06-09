@@ -165,6 +165,7 @@ class Chat extends Widget<ChatProperties> {
   ): void {
     if (e?.changes) {
       this._messageList._modifyByChanges(e.changes);
+
       this._setOptionWithoutOptionChange('items', newItems.slice());
       this._messageList._setOptionWithoutOptionChange('items', newItems.slice());
 
