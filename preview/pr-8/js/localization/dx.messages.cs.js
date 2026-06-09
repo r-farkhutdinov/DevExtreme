@@ -1,7 +1,7 @@
 /*!
 * DevExtreme (dx.messages.cs.js)
 * Version: 26.1.3
-* Build date: Mon Jun 08 2026
+* Build date: Tue Jun 09 2026
 *
 * Copyright (c) 2012 - 2026 Developer Express Inc. ALL RIGHTS RESERVED
 * Read about DevExtreme licensing here: https://js.devexpress.com/Licensing/
