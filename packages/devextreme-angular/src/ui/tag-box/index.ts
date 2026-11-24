@@ -702,6 +702,17 @@ export class DxTagBoxComponent extends DxComponent implements OnDestroy, Control
     }
 
     /**
+     * [descr:dxSelectBoxOptions.showSearchIcon]
+     */
+    @Input()
+    get showSearchIcon(): boolean {
+        return this._getOption('showSearchIcon');
+    }
+    set showSearchIcon(value: boolean) {
+        this._setOption('showSearchIcon', value);
+    }
+
+    /**
      * [descr:dxSelectBoxOptions.showSelectionControls]
      */
     @Input()
@@ -1246,6 +1257,11 @@ export class DxTagBoxComponent extends DxComponent implements OnDestroy, Control
     /**
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
      */
+    @Output() showSearchIconChange: EventEmitter<boolean>;
+
+    /**
+     * This member supports the internal infrastructure and is not intended to be used directly from your code.
+     */
     @Output() showSelectionControlsChange: EventEmitter<boolean>;
 
     /**
@@ -1416,6 +1432,7 @@ export class DxTagBoxComponent extends DxComponent implements OnDestroy, Control
             { emit: 'showDataBeforeSearchChange' },
             { emit: 'showDropDownButtonChange' },
             { emit: 'showMultiTagOnlyChange' },
+            { emit: 'showSearchIconChange' },
             { emit: 'showSelectionControlsChange' },
             { emit: 'stylingModeChange' },
             { emit: 'tabIndexChange' },

@@ -137,17 +137,6 @@ export class DxTabsComponent<TItem = any, TKey = any> extends DxComponent implem
     }
 
     /**
-     * [descr:WidgetOptions.hint]
-     */
-    @Input()
-    get hint(): string | undefined {
-        return this._getOption('hint');
-    }
-    set hint(value: string | undefined) {
-        this._setOption('hint', value);
-    }
-
-    /**
      * [descr:dxTabsOptions.hoverStateEnabled]
      */
     @Input()
@@ -472,11 +461,6 @@ export class DxTabsComponent<TItem = any, TKey = any> extends DxComponent implem
     /**
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
      */
-    @Output() hintChange: EventEmitter<string | undefined>;
-
-    /**
-     * This member supports the internal infrastructure and is not intended to be used directly from your code.
-     */
     @Output() hoverStateEnabledChange: EventEmitter<boolean>;
 
     /**
@@ -610,7 +594,6 @@ export class DxTabsComponent<TItem = any, TKey = any> extends DxComponent implem
             { emit: 'elementAttrChange' },
             { emit: 'focusStateEnabledChange' },
             { emit: 'heightChange' },
-            { emit: 'hintChange' },
             { emit: 'hoverStateEnabledChange' },
             { emit: 'iconPositionChange' },
             { emit: 'itemHoldTimeoutChange' },

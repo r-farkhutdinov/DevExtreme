@@ -56,6 +56,14 @@ export type ContentReadyEvent = EventInfo<dxButton>;
 export type DisposingEvent = EventInfo<dxButton>;
 
 /**
+ * @docid _ui_button_IconClickEvent
+ * @public
+ * @type object
+ * @inherits NativeEventInfo
+ */
+export type IconClickEvent = NativeEventInfo<dxButton, MouseEvent>;
+
+/**
  * @docid _ui_button_InitializedEvent
  * @public
  * @type object
@@ -109,12 +117,26 @@ export interface dxButtonOptions extends WidgetOptions<dxButton> {
     icon?: string;
     /**
      * @docid
+     * @default 'start'
+     * @public
+     */
+    iconPosition?: 'start' | 'end';
+    /**
+     * @docid
      * @default undefined
      * @type_function_param1 e:{ui/button:ClickEvent}
      * @action
      * @public
      */
     onClick?: ((e: ClickEvent) => void) | undefined;
+    /**
+     * @docid
+     * @default undefined
+     * @type_function_param1 e:{ui/button:IconClickEvent}
+     * @action
+     * @public
+     */
+    onIconClick?: ((e: IconClickEvent) => void) | undefined;
     /**
      * @docid
      * @default 'contained'
@@ -172,7 +194,7 @@ import { CheckedEvents } from '../core';
 
 type FilterOutHidden<T> = Omit<T, 'onFocusIn' | 'onFocusOut'>;
 
-type EventsIntegrityCheckingHelper = CheckedEvents<FilterOutHidden<Properties>, Required<Events>, 'onClick'>;
+type EventsIntegrityCheckingHelper = CheckedEvents<FilterOutHidden<Properties>, Required<Events>, 'onClick' | 'onIconClick'>;
 
 /**
 * @hidden

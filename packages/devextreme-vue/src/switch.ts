@@ -24,6 +24,7 @@ type AccessibleOptions = Pick<Properties,
   "height" |
   "hint" |
   "hoverStateEnabled" |
+  "indeterminate" |
   "isDirty" |
   "isValid" |
   "name" |
@@ -37,6 +38,7 @@ type AccessibleOptions = Pick<Properties,
   "switchedOffText" |
   "switchedOnText" |
   "tabIndex" |
+  "thumbTemplate" |
   "validationError" |
   "validationErrors" |
   "validationMessageMode" |
@@ -61,6 +63,7 @@ const componentConfig = {
     height: [Number, String],
     hint: String,
     hoverStateEnabled: Boolean,
+    indeterminate: Boolean,
     isDirty: Boolean,
     isValid: Boolean,
     name: String,
@@ -72,8 +75,9 @@ const componentConfig = {
     readOnly: Boolean,
     rtlEnabled: Boolean,
     switchedOffText: String,
-    switchedOnText: String,
+    switchedOnText: [Number, String],
     tabIndex: Number,
+    thumbTemplate: {},
     validationError: {},
     validationErrors: Array as PropType<Array<any> | null>,
     validationMessageMode: String as PropType<ValidationMessageMode>,
@@ -94,6 +98,7 @@ const componentConfig = {
     "update:height": null,
     "update:hint": null,
     "update:hoverStateEnabled": null,
+    "update:indeterminate": null,
     "update:isDirty": null,
     "update:isValid": null,
     "update:name": null,
@@ -107,6 +112,7 @@ const componentConfig = {
     "update:switchedOffText": null,
     "update:switchedOnText": null,
     "update:tabIndex": null,
+    "update:thumbTemplate": null,
     "update:validationError": null,
     "update:validationErrors": null,
     "update:validationMessageMode": null,

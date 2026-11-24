@@ -7,7 +7,7 @@ import dxButton, {
 
 import { Component as BaseComponent, IHtmlOptions, ComponentRef } from "./core/component";
 
-import type { ClickEvent, ContentReadyEvent, DisposingEvent, InitializedEvent } from "devextreme/ui/button";
+import type { ClickEvent, ContentReadyEvent, DisposingEvent, IconClickEvent, InitializedEvent } from "devextreme/ui/button";
 
 type ReplaceFieldTypes<TSource, TReplacement> = {
   [P in keyof TSource]: P extends keyof TReplacement ? TReplacement[P] : TSource[P];
@@ -17,6 +17,7 @@ type IButtonOptionsNarrowedEvents = {
   onClick?: ((e: ClickEvent) => void) | undefined;
   onContentReady?: ((e: ContentReadyEvent) => void);
   onDisposing?: ((e: DisposingEvent) => void);
+  onIconClick?: ((e: IconClickEvent) => void) | undefined;
   onInitialized?: ((e: InitializedEvent) => void);
 }
 
@@ -42,7 +43,7 @@ const Button = memo(
         }
       ), []);
 
-      const independentEvents = useMemo(() => (["onClick","onContentReady","onDisposing","onInitialized"]), []);
+      const independentEvents = useMemo(() => (["onClick","onContentReady","onDisposing","onIconClick","onInitialized"]), []);
 
       const templateProps = useMemo(() => ([
         {

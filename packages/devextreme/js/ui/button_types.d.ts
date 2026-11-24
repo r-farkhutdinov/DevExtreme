@@ -4,6 +4,7 @@ export {
   ClickEvent,
   ContentReadyEvent,
   DisposingEvent,
+  IconClickEvent,
   InitializedEvent,
   OptionChangedEvent,
   TemplateData,

@@ -9,6 +9,11 @@ export default Tabs;
  */
 
 /**
+ * @name dxTabsOptions.hint
+ * @hidden
+ */
+
+/**
  * @name dxTabsItem
  * @inherits CollectionWidgetItem
  * @type object

@@ -9,7 +9,7 @@ import { Component as BaseComponent, IHtmlOptions, ComponentRef, NestedComponent
 import NestedOption from "./core/nested-option";
 
 import type { ChangeEvent, ContentReadyEvent, CopyEvent, CutEvent, DisposingEvent, EnterKeyEvent, FocusInEvent, FocusOutEvent, InitializedEvent, InputEvent, KeyDownEvent, KeyUpEvent, PasteEvent, ValueChangedEvent } from "devextreme/ui/number_box";
-import type { ContentReadyEvent as ButtonContentReadyEvent, DisposingEvent as ButtonDisposingEvent, InitializedEvent as ButtonInitializedEvent, dxButtonOptions, ClickEvent, OptionChangedEvent } from "devextreme/ui/button";
+import type { ContentReadyEvent as ButtonContentReadyEvent, DisposingEvent as ButtonDisposingEvent, InitializedEvent as ButtonInitializedEvent, dxButtonOptions, ClickEvent, IconClickEvent, OptionChangedEvent } from "devextreme/ui/button";
 import type { TextEditorButtonLocation, Format as CommonFormat, ButtonStyle, template, ButtonType } from "devextreme/common";
 import type { FormatLocale } from "devextreme/common/core/localization";
 
@@ -144,9 +144,11 @@ type IOptionsProps = React.PropsWithChildren<{
   hint?: string | undefined;
   hoverStateEnabled?: boolean;
   icon?: string;
+  iconPosition?: "end" | "start";
   onClick?: ((e: ClickEvent) => void) | undefined;
   onContentReady?: ((e: ButtonContentReadyEvent) => void);
   onDisposing?: ((e: ButtonDisposingEvent) => void);
+  onIconClick?: ((e: IconClickEvent) => void) | undefined;
   onInitialized?: ((e: ButtonInitializedEvent) => void);
   onOptionChanged?: ((e: OptionChangedEvent) => void);
   rtlEnabled?: boolean;

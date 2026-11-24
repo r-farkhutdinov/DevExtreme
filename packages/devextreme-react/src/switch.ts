@@ -21,7 +21,11 @@ type ISwitchOptionsNarrowedEvents = {
 }
 
 type ISwitchOptions = React.PropsWithChildren<ReplaceFieldTypes<Properties, ISwitchOptionsNarrowedEvents> & IHtmlOptions & {
+  thumbRender?: (...params: any) => React.ReactNode;
+  thumbComponent?: React.ComponentType<any>;
+  defaultIndeterminate?: boolean;
   defaultValue?: boolean;
+  onIndeterminateChange?: (value: boolean) => void;
   onValueChange?: (value: boolean) => void;
 }>
 
@@ -42,12 +46,21 @@ const Switch = memo(
         }
       ), []);
 
-      const subscribableOptions = useMemo(() => (["value"]), []);
+      const subscribableOptions = useMemo(() => (["indeterminate","value"]), []);
       const independentEvents = useMemo(() => (["onContentReady","onDisposing","onInitialized","onValueChanged"]), []);
 
       const defaults = useMemo(() => ({
+        defaultIndeterminate: "indeterminate",
         defaultValue: "value",
       }), []);
+
+      const templateProps = useMemo(() => ([
+        {
+          tmplOption: "thumbTemplate",
+          render: "thumbRender",
+          component: "thumbComponent"
+        },
+      ]), []);
 
       return (
         React.createElement(BaseComponent<React.PropsWithChildren<ISwitchOptions>>, {
@@ -56,6 +69,7 @@ const Switch = memo(
           subscribableOptions,
           independentEvents,
           defaults,
+          templateProps,
           ...props,
         })
       );

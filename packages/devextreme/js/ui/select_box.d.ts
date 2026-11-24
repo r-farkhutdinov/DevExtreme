@@ -273,6 +273,12 @@ export interface dxSelectBoxOptions<TComponent> extends dxDropDownListOptions<TC
      * @default false
      * @public
      */
+    showSearchIcon?: boolean;
+    /**
+     * @docid
+     * @default false
+     * @public
+     */
     showSelectionControls?: boolean;
     /**
      * @docid

@@ -38,7 +38,6 @@ type AccessibleOptions = Pick<Properties,
   "elementAttr" |
   "focusStateEnabled" |
   "height" |
-  "hint" |
   "hoverStateEnabled" |
   "iconPosition" |
   "itemHoldTimeout" |
@@ -85,7 +84,6 @@ const componentConfig = {
     elementAttr: Object as PropType<Record<string, any>>,
     focusStateEnabled: Boolean,
     height: [Number, String],
-    hint: String,
     hoverStateEnabled: Boolean,
     iconPosition: String as PropType<TabsIconPosition>,
     itemHoldTimeout: Number,
@@ -128,7 +126,6 @@ const componentConfig = {
     "update:elementAttr": null,
     "update:focusStateEnabled": null,
     "update:height": null,
-    "update:hint": null,
     "update:hoverStateEnabled": null,
     "update:iconPosition": null,
     "update:itemHoldTimeout": null,

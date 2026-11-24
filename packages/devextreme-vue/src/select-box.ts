@@ -78,6 +78,7 @@ import {
  ClickEvent,
  ContentReadyEvent as ButtonContentReadyEvent,
  DisposingEvent as ButtonDisposingEvent,
+ IconClickEvent,
  InitializedEvent as ButtonInitializedEvent,
  OptionChangedEvent as ButtonOptionChangedEvent,
 } from "devextreme/ui/button";
@@ -162,6 +163,7 @@ type AccessibleOptions = Pick<Properties,
   "showClearButton" |
   "showDataBeforeSearch" |
   "showDropDownButton" |
+  "showSearchIcon" |
   "showSelectionControls" |
   "spellcheck" |
   "stylingMode" |
@@ -252,6 +254,7 @@ const componentConfig = {
     showClearButton: Boolean,
     showDataBeforeSearch: Boolean,
     showDropDownButton: Boolean,
+    showSearchIcon: Boolean,
     showSelectionControls: Boolean,
     spellcheck: Boolean,
     stylingMode: String as PropType<EditorStyle>,
@@ -338,6 +341,7 @@ const componentConfig = {
     "update:showClearButton": null,
     "update:showDataBeforeSearch": null,
     "update:showDropDownButton": null,
+    "update:showSearchIcon": null,
     "update:showSelectionControls": null,
     "update:spellcheck": null,
     "update:stylingMode": null,
@@ -765,9 +769,11 @@ const DxOptionsConfig = {
     "update:hint": null,
     "update:hoverStateEnabled": null,
     "update:icon": null,
+    "update:iconPosition": null,
     "update:onClick": null,
     "update:onContentReady": null,
     "update:onDisposing": null,
+    "update:onIconClick": null,
     "update:onInitialized": null,
     "update:onOptionChanged": null,
     "update:rtlEnabled": null,
@@ -791,9 +797,11 @@ const DxOptionsConfig = {
     hint: String,
     hoverStateEnabled: Boolean,
     icon: String,
+    iconPosition: String as PropType<"end" | "start">,
     onClick: Function as PropType<((e: ClickEvent) => void)>,
     onContentReady: Function as PropType<((e: ButtonContentReadyEvent) => void)>,
     onDisposing: Function as PropType<((e: ButtonDisposingEvent) => void)>,
+    onIconClick: Function as PropType<((e: IconClickEvent) => void)>,
     onInitialized: Function as PropType<((e: ButtonInitializedEvent) => void)>,
     onOptionChanged: Function as PropType<((e: ButtonOptionChangedEvent) => void)>,
     rtlEnabled: Boolean,

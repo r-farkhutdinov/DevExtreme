@@ -156,6 +156,17 @@ export class DxSwitchComponent extends DxComponent implements OnDestroy, Control
     }
 
     /**
+     * [descr:dxSwitchOptions.indeterminate]
+     */
+    @Input()
+    get indeterminate(): boolean {
+        return this._getOption('indeterminate');
+    }
+    set indeterminate(value: boolean) {
+        this._setOption('indeterminate', value);
+    }
+
+    /**
      * [descr:EditorOptions.isDirty]
      */
     @Input()
@@ -225,10 +236,10 @@ export class DxSwitchComponent extends DxComponent implements OnDestroy, Control
      * [descr:dxSwitchOptions.switchedOnText]
      */
     @Input()
-    get switchedOnText(): string {
+    get switchedOnText(): number | string {
         return this._getOption('switchedOnText');
     }
-    set switchedOnText(value: string) {
+    set switchedOnText(value: number | string) {
         this._setOption('switchedOnText', value);
     }
 
@@ -241,6 +252,17 @@ export class DxSwitchComponent extends DxComponent implements OnDestroy, Control
     }
     set tabIndex(value: number) {
         this._setOption('tabIndex', value);
+    }
+
+    /**
+     * [descr:dxSwitchOptions.thumbTemplate]
+     */
+    @Input()
+    get thumbTemplate(): any {
+        return this._getOption('thumbTemplate');
+    }
+    set thumbTemplate(value: any) {
+        this._setOption('thumbTemplate', value);
     }
 
     /**
@@ -399,6 +421,11 @@ export class DxSwitchComponent extends DxComponent implements OnDestroy, Control
     /**
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
      */
+    @Output() indeterminateChange: EventEmitter<boolean>;
+
+    /**
+     * This member supports the internal infrastructure and is not intended to be used directly from your code.
+     */
     @Output() isDirtyChange: EventEmitter<boolean>;
 
     /**
@@ -429,12 +456,17 @@ export class DxSwitchComponent extends DxComponent implements OnDestroy, Control
     /**
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
      */
-    @Output() switchedOnTextChange: EventEmitter<string>;
+    @Output() switchedOnTextChange: EventEmitter<number | string>;
 
     /**
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
      */
     @Output() tabIndexChange: EventEmitter<number>;
+
+    /**
+     * This member supports the internal infrastructure and is not intended to be used directly from your code.
+     */
+    @Output() thumbTemplateChange: EventEmitter<any>;
 
     /**
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
@@ -506,6 +538,7 @@ export class DxSwitchComponent extends DxComponent implements OnDestroy, Control
             { emit: 'heightChange' },
             { emit: 'hintChange' },
             { emit: 'hoverStateEnabledChange' },
+            { emit: 'indeterminateChange' },
             { emit: 'isDirtyChange' },
             { emit: 'isValidChange' },
             { emit: 'nameChange' },
@@ -514,6 +547,7 @@ export class DxSwitchComponent extends DxComponent implements OnDestroy, Control
             { emit: 'switchedOffTextChange' },
             { emit: 'switchedOnTextChange' },
             { emit: 'tabIndexChange' },
+            { emit: 'thumbTemplateChange' },
             { emit: 'validationErrorChange' },
             { emit: 'validationErrorsChange' },
             { emit: 'validationMessageModeChange' },

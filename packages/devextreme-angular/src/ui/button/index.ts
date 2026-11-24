@@ -14,7 +14,7 @@ import {
 } from '@angular/core';
 
 
-import type { ClickEvent, ContentReadyEvent, DisposingEvent, InitializedEvent, OptionChangedEvent } from 'devextreme/ui/button';
+import type { ClickEvent, ContentReadyEvent, DisposingEvent, IconClickEvent, InitializedEvent, OptionChangedEvent } from 'devextreme/ui/button';
 import type { ButtonStyle, ButtonType } from 'devextreme/common';
 
 import DxButton from 'devextreme/ui/button';
@@ -149,6 +149,17 @@ export class DxButtonComponent extends DxComponent implements OnDestroy {
     }
 
     /**
+     * [descr:dxButtonOptions.iconPosition]
+     */
+    @Input()
+    get iconPosition(): "end" | "start" {
+        return this._getOption('iconPosition');
+    }
+    set iconPosition(value: "end" | "start") {
+        this._setOption('iconPosition', value);
+    }
+
+    /**
      * [descr:DOMComponentOptions.rtlEnabled]
      */
     @Input()
@@ -274,6 +285,11 @@ export class DxButtonComponent extends DxComponent implements OnDestroy {
     @Output() onDisposing: EventEmitter<DisposingEvent>;
 
     /**
+     * [descr:dxButtonOptions.onIconClick]
+     */
+    @Output() onIconClick: EventEmitter<IconClickEvent>;
+
+    /**
      * [descr:dxButtonOptions.onInitialized]
      */
     @Output() onInitialized: EventEmitter<InitializedEvent>;
@@ -327,6 +343,11 @@ export class DxButtonComponent extends DxComponent implements OnDestroy {
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
      */
     @Output() iconChange: EventEmitter<string>;
+
+    /**
+     * This member supports the internal infrastructure and is not intended to be used directly from your code.
+     */
+    @Output() iconPositionChange: EventEmitter<"end" | "start">;
 
     /**
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
@@ -390,6 +411,7 @@ export class DxButtonComponent extends DxComponent implements OnDestroy {
             { subscribe: 'click', emit: 'onClick' },
             { subscribe: 'contentReady', emit: 'onContentReady' },
             { subscribe: 'disposing', emit: 'onDisposing' },
+            { subscribe: 'iconClick', emit: 'onIconClick' },
             { subscribe: 'initialized', emit: 'onInitialized' },
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
             { emit: 'accessKeyChange' },
@@ -401,6 +423,7 @@ export class DxButtonComponent extends DxComponent implements OnDestroy {
             { emit: 'hintChange' },
             { emit: 'hoverStateEnabledChange' },
             { emit: 'iconChange' },
+            { emit: 'iconPositionChange' },
             { emit: 'rtlEnabledChange' },
             { emit: 'stylingModeChange' },
             { emit: 'tabIndexChange' },

@@ -6,6 +6,7 @@ import {
  ClickEvent,
  ContentReadyEvent,
  DisposingEvent,
+ IconClickEvent,
  InitializedEvent,
  OptionChangedEvent,
 } from "devextreme/ui/button";
@@ -24,9 +25,11 @@ type AccessibleOptions = Pick<Properties,
   "hint" |
   "hoverStateEnabled" |
   "icon" |
+  "iconPosition" |
   "onClick" |
   "onContentReady" |
   "onDisposing" |
+  "onIconClick" |
   "onInitialized" |
   "onOptionChanged" |
   "rtlEnabled" |
@@ -56,9 +59,11 @@ const componentConfig = {
     hint: String,
     hoverStateEnabled: Boolean,
     icon: String,
+    iconPosition: String as PropType<"end" | "start">,
     onClick: Function as PropType<((e: ClickEvent) => void)>,
     onContentReady: Function as PropType<((e: ContentReadyEvent) => void)>,
     onDisposing: Function as PropType<((e: DisposingEvent) => void)>,
+    onIconClick: Function as PropType<((e: IconClickEvent) => void)>,
     onInitialized: Function as PropType<((e: InitializedEvent) => void)>,
     onOptionChanged: Function as PropType<((e: OptionChangedEvent) => void)>,
     rtlEnabled: Boolean,
@@ -84,9 +89,11 @@ const componentConfig = {
     "update:hint": null,
     "update:hoverStateEnabled": null,
     "update:icon": null,
+    "update:iconPosition": null,
     "update:onClick": null,
     "update:onContentReady": null,
     "update:onDisposing": null,
+    "update:onIconClick": null,
     "update:onInitialized": null,
     "update:onOptionChanged": null,
     "update:rtlEnabled": null,

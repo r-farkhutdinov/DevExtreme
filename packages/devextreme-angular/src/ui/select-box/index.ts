@@ -625,6 +625,17 @@ export class DxSelectBoxComponent extends DxComponent implements OnDestroy, Cont
     }
 
     /**
+     * [descr:dxSelectBoxOptions.showSearchIcon]
+     */
+    @Input()
+    get showSearchIcon(): boolean {
+        return this._getOption('showSearchIcon');
+    }
+    set showSearchIcon(value: boolean) {
+        this._setOption('showSearchIcon', value);
+    }
+
+    /**
      * [descr:dxSelectBoxOptions.showSelectionControls]
      */
     @Input()
@@ -1139,6 +1150,11 @@ export class DxSelectBoxComponent extends DxComponent implements OnDestroy, Cont
     /**
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
      */
+    @Output() showSearchIconChange: EventEmitter<boolean>;
+
+    /**
+     * This member supports the internal infrastructure and is not intended to be used directly from your code.
+     */
     @Output() showSelectionControlsChange: EventEmitter<boolean>;
 
     /**
@@ -1303,6 +1319,7 @@ export class DxSelectBoxComponent extends DxComponent implements OnDestroy, Cont
             { emit: 'showClearButtonChange' },
             { emit: 'showDataBeforeSearchChange' },
             { emit: 'showDropDownButtonChange' },
+            { emit: 'showSearchIconChange' },
             { emit: 'showSelectionControlsChange' },
             { emit: 'spellcheckChange' },
             { emit: 'stylingModeChange' },

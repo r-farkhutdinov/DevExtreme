@@ -6,6 +6,15 @@ import {
     InteractionEvent,
 } from '../events';
 
+import {
+    template,
+} from '../common';
+
+import {
+    DxElement,
+    UserDefinedElement,
+} from '../core/element';
+
 import Editor, {
     ValueChangedInfo,
     EditorOptions,
@@ -77,6 +86,13 @@ export interface dxSwitchOptions extends EditorOptions<dxSwitch> {
     hoverStateEnabled?: boolean;
     /**
      * @docid
+     * @default false
+     * @fires dxSwitchOptions.onOptionChanged
+     * @public
+     */
+    indeterminate?: boolean;
+    /**
+     * @docid
      * @hidden false
      * @public
      */
@@ -92,7 +108,16 @@ export interface dxSwitchOptions extends EditorOptions<dxSwitch> {
      * @default "ON"
      * @public
      */
-    switchedOnText?: string;
+    switchedOnText?: string | number;
+    /**
+     * @docid
+     * @type_function_param1 data:object
+     * @type_function_return string|Element|jQuery
+     * @public
+     */
+    thumbTemplate?: template | (
+        (data: { value: boolean }, thumbElement: DxElement) => string | UserDefinedElement
+    );
     /**
      * @docid
      * @default false

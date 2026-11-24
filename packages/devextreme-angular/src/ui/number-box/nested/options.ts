@@ -13,7 +13,7 @@ import {
     Input
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import type { ClickEvent, ContentReadyEvent, DisposingEvent, InitializedEvent, OptionChangedEvent } from 'devextreme/ui/button';
+import type { ClickEvent, ContentReadyEvent, DisposingEvent, IconClickEvent, InitializedEvent, OptionChangedEvent } from 'devextreme/ui/button';
 import type { ButtonStyle, ButtonType } from 'devextreme/common';
 
 import {
@@ -108,6 +108,14 @@ export class DxoNumberBoxOptionsComponent extends NestedOption implements AfterV
     }
 
     @Input()
+    get iconPosition(): "end" | "start" {
+        return this._getOption('iconPosition');
+    }
+    set iconPosition(value: "end" | "start") {
+        this._setOption('iconPosition', value);
+    }
+
+    @Input()
     get onClick(): ((e: ClickEvent) => void) | undefined {
         return this._getOption('onClick');
     }
@@ -129,6 +137,14 @@ export class DxoNumberBoxOptionsComponent extends NestedOption implements AfterV
     }
     set onDisposing(value: ((e: DisposingEvent) => void)) {
         this._setOption('onDisposing', value);
+    }
+
+    @Input()
+    get onIconClick(): ((e: IconClickEvent) => void) | undefined {
+        return this._getOption('onIconClick');
+    }
+    set onIconClick(value: ((e: IconClickEvent) => void) | undefined) {
+        this._setOption('onIconClick', value);
     }
 
     @Input()
